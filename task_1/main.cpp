@@ -9,7 +9,7 @@ char* Rus(const char* text) {
       CharToOem(text, bufRus);
       return bufRus;
 }
-int n_of_words(const char* x, int n){///кол слов
+int n_of_words(const char* x, int n){///ГЄГ®Г« Г±Г«Г®Гў
     int j=1;
     for(int i=0; i<n;i++){
         if(isspace(x[i])){
@@ -27,33 +27,33 @@ void okonchanie(string categories[], int n_of_w){
 int tmp;
 for(int i=0;i<n_of_w;++i){
      l_of_str = categories[i].length()-2;
-     if(categories[i].erase(0,l_of_str)=="ая"){
-        okonch="ой";///обуви,футболка, одежда
+     if(categories[i].erase(0,l_of_str)=="Г Гї"){
+        okonch="Г®Г©";///Г®ГЎГіГўГЁ,ГґГіГІГЎГ®Г«ГЄГ , Г®Г¤ГҐГ¦Г¤Г 
         cout<<categories[i].erase(0,l_of_str)<<endl;
      }
-     else if(categories[i].erase(0,l_of_str)=="яя"){   ///с яя ая больше проблем
-        okonch="ей";///блузка, обувь
+     else if(categories[i].erase(0,l_of_str)=="ГїГї"){   ///Г± ГїГї Г Гї ГЎГ®Г«ГјГёГҐ ГЇГ°Г®ГЎГ«ГҐГ¬
+        okonch="ГҐГ©";///ГЎГ«ГіГ§ГЄГ , Г®ГЎГіГўГј
      }
-     else if(categories[i].erase(0,l_of_str)=="ой"||categories[i].erase(0,l_of_str)=="ый"){
-        okonch="ого";///пиджак, красный крест
+     else if(categories[i].erase(0,l_of_str)=="Г®Г©"||categories[i].erase(0,l_of_str)=="Г»Г©"){
+        okonch="Г®ГЈГ®";///ГЇГЁГ¤Г¦Г ГЄ, ГЄГ°Г Г±Г­Г»Г© ГЄГ°ГҐГ±ГІ
      }
-     else if(categories[i].erase(0,l_of_str)=="ое"){
-        okonch="ого"; ///доброе,красное дерево, ЯБЛОКО(ки)!
+     else if(categories[i].erase(0,l_of_str)=="Г®ГҐ"){
+        okonch="Г®ГЈГ®"; ///Г¤Г®ГЎГ°Г®ГҐ,ГЄГ°Г Г±Г­Г®ГҐ Г¤ГҐГ°ГҐГўГ®, ГџГЃГ‹ГЋГЉГЋ(ГЄГЁ)!
 
      }
-     else if(categories[i].erase(0,l_of_str)=="ее"){
-        okonch="его";///
+     else if(categories[i].erase(0,l_of_str)=="ГҐГҐ"){
+        okonch="ГҐГЈГ®";///
      }
-     else if(categories[i].erase(0,l_of_str)=="ий"){
-        okonch="его";/// короткий путь(), свежий (-а)
+     else if(categories[i].erase(0,l_of_str)=="ГЁГ©"){
+        okonch="ГҐГЈГ®";/// ГЄГ®Г°Г®ГІГЄГЁГ© ГЇГіГІГј(), Г±ГўГҐГ¦ГЁГ© (-Г )
      }
-     else if(categories[i].erase(0,l_of_str)=="ие"){
+     else if(categories[i].erase(0,l_of_str)=="ГЁГҐ"){
      }
-     else if(categories[i].erase(0,l_of_str)=="ые"){
+     else if(categories[i].erase(0,l_of_str)=="Г»ГҐ"){
 
      }
      if(categories[i].length()<4){
-        if(categories[i]=="без"||categories[i]=="от"||categories[i]=="в"||categories[i]=="для"||categories[i]=="к"||categories[i]=="по"||categories[i]=="с"){
+        if(categories[i]=="ГЎГҐГ§"||categories[i]=="Г®ГІ"||categories[i]=="Гў"||categories[i]=="Г¤Г«Гї"||categories[i]=="ГЄ"||categories[i]=="ГЇГ®"||categories[i]=="Г±"){
 
         }
      }
@@ -75,9 +75,9 @@ void form_changer(string categories[], int n_of_w){
 
 
 int k=0;
-        if(x_okon=="ая"){
+        if(x_okon=="Г Гї"){
 
-            okonch="ой";///обувь, футболка, одежда
+            okonch="Г®Г©";///Г®ГЎГіГўГј, ГґГіГІГЎГ®Г«ГЄГ , Г®Г¤ГҐГ¦Г¤Г 
             if(!i){is_pril++;
             x_t = x_p = categories[i+1];}else
             if (is_noun)
@@ -88,23 +88,23 @@ int k=0;
             x_t.erase(0,x_t.length()-1);
             okonch_b.erase(okonch_b.end()-1);
 
-            if(okonch_b=="к"){
+            if(okonch_b=="ГЄ"){
                 k++;
                 cout<<"okonb = "<<okonch_b<<endl;
-                slovo+=x_p.erase(x_p.length()-1,1)+"и";
+                slovo+=x_p.erase(x_p.length()-1,1)+"ГЁ";
             }
-            if(x_t=="ь"){
-                slovo+=x_p.erase(x_p.length()-1,1)+"и";
+            if(x_t=="Гј"){
+                slovo+=x_p.erase(x_p.length()-1,1)+"ГЁ";
             }
             else if(!k)
-                slovo+=x_p.erase(x_p.length()-1,1)+"ы";
+                slovo+=x_p.erase(x_p.length()-1,1)+"Г»";
         }else if(!i){
             is_noun++;
         }
 
 
-        int is_pred=0; ///Предлоги
-        if(categories[i].length()<4&&categories[i]=="для"||categories[i]=="c"||categories[i]=="по"||categories[i]=="на"){
+        int is_pred=0; ///ГЏГ°ГҐГ¤Г«Г®ГЈГЁ
+        if(categories[i].length()<4&&categories[i]=="Г¤Г«Гї"||categories[i]=="c"||categories[i]=="ГЇГ®"||categories[i]=="Г­Г "){
             for(int j=i;j<n_of_w;++j){
                 i++;
                 is_pred++;
@@ -113,15 +113,15 @@ int k=0;
         }
         if(is_pred)break;
     }
-    cout<<"Производитель "+slovo+" из";
+    cout<<"ГЏГ°Г®ГЁГ§ГўГ®Г¤ГЁГІГҐГ«Гј "+slovo+" ГЁГ§";
 }
 
 int main()
 {
     setlocale(LC_ALL,"Russian");
-    string category="Женская одежда на лето";
+    string category="Г†ГҐГ­Г±ГЄГ Гї Г®Г¤ГҐГ¦Г¤Г  Г­Г  Г«ГҐГІГ®";
     //getline(cin,category);
-    string country="Россия";
+    string country="ГђГ®Г±Г±ГЁГї";
 
     int h=0;
     int count=0,no=0;
@@ -142,7 +142,6 @@ cout<<"\n\n";
 //for(int i=0;i<ip;++i){
 //    cout<<categories[i]<<endl;
 //}
-
 form_changer(categories,ip);
 cout<<"\n";
 getchar();
