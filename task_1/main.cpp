@@ -3,12 +3,6 @@
 #include <windows.h>
 using namespace std;
 
-      char bufRus[256];
-
-char* Rus(const char* text) {
-      CharToOem(text, bufRus);
-      return bufRus;
-}
 int n_of_words(const char* x, int n){///êîë ñëîâ
     int j=1;
     for(int i=0; i<n;i++){
@@ -19,47 +13,7 @@ int n_of_words(const char* x, int n){///êîë ñëîâ
     }
     return j;
 }
-void okonchanie(string categories[], int n_of_w){
-    int l_of_str;
-    string predlozh="";
-    string slovo;
-    string okonch;
-int tmp;
-for(int i=0;i<n_of_w;++i){
-     l_of_str = categories[i].length()-2;
-     if(categories[i].erase(0,l_of_str)=="àÿ"){
-        okonch="îé";///îáóâè,ôóòáîëêà, îäåæäà
-        cout<<categories[i].erase(0,l_of_str)<<endl;
-     }
-     else if(categories[i].erase(0,l_of_str)=="ÿÿ"){   ///ñ ÿÿ àÿ áîëüøå ïðîáëåì
-        okonch="åé";///áëóçêà, îáóâü
-     }
-     else if(categories[i].erase(0,l_of_str)=="îé"||categories[i].erase(0,l_of_str)=="ûé"){
-        okonch="îãî";///ïèäæàê, êðàñíûé êðåñò
-     }
-     else if(categories[i].erase(0,l_of_str)=="îå"){
-        okonch="îãî"; ///äîáðîå,êðàñíîå äåðåâî, ßÁËÎÊÎ(êè)!
 
-     }
-     else if(categories[i].erase(0,l_of_str)=="åå"){
-        okonch="åãî";///
-     }
-     else if(categories[i].erase(0,l_of_str)=="èé"){
-        okonch="åãî";/// êîðîòêèé ïóòü(), ñâåæèé (-à)
-     }
-     else if(categories[i].erase(0,l_of_str)=="èå"){
-     }
-     else if(categories[i].erase(0,l_of_str)=="ûå"){
-
-     }
-     if(categories[i].length()<4){
-        if(categories[i]=="áåç"||categories[i]=="îò"||categories[i]=="â"||categories[i]=="äëÿ"||categories[i]=="ê"||categories[i]=="ïî"||categories[i]=="ñ"){
-
-        }
-     }
-     predlozh+=slovo;
-}
-}
 void form_changer(string categories[], int n_of_w){
     int l_of_str, is_noun=0,is_pril=0;
     string slovo="",xn,x_okon,x_a,x_b,x_left, x_t,x_p,okonch,okonch_a,okonch_b;
@@ -118,6 +72,7 @@ int k=0;
 
 int main()
 {
+    system("chcp 1251>0");
     setlocale(LC_ALL,"Russian");
     string category="Æåíñêàÿ îäåæäà íà ëåòî";
     //getline(cin,category);
