@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1495641999 source:c:\users\abubakr\desktop\task_1\main.cpp
+	<iostream>
+	<string>
+	<windows.h>
+
